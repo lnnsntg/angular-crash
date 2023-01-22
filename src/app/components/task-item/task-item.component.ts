@@ -17,5 +17,6 @@ export class TaskItemComponent implements OnInit {
 
   onDelete(task: any) {
     this.onDeleteTask.emit(task);
+    
   }
 }

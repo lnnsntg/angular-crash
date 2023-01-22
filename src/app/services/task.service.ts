@@ -7,16 +7,16 @@ import { Task } from '../Task';
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = 'http://localhost:3000/tasks'
-  
+  private apiUrl = 'http://localhost:3000/tasks';
+
   constructor(private http: HttpClient) {}
 
-  geTask(): Observable<Task[]> {
+  geTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.apiUrl);
   }
+  
   deleteTask(task: Task): Observable<Task> {
-    const url = `${this.apiUrl}/${task.id}`
-    return this.http.delete<Task>(url)
-
+    const url = `${this.apiUrl}/${task.id}`;
+    return this.http.delete<Task>(url);
   }
 }
